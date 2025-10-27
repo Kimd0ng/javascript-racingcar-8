@@ -8,3 +8,10 @@ export function advanceRound(cars) {
         }
     });
 }
+
+export function printRound(cars) {
+    cars.forEach((car) => {
+        MissionUtils.Console.print(`${car.name} : ${'-'.repeat(car.position)}`);
+    });
+    MissionUtils.Console.print('');
+}
