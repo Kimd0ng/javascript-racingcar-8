@@ -15,3 +15,8 @@ export function printRound(cars) {
     });
     MissionUtils.Console.print('');
 }
+
+export function getWinners(cars) {
+    const maxPos = Math.max(...cars.map((c) => c.position));
+    return cars.filter((c) => c.position === maxPos).map((c) => c.name);
+}
