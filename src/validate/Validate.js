@@ -16,3 +16,14 @@ export function parseAndValidateNames(line) {
     });
     return names;
 }
+
+export function parseAndValidateTries(line) {
+    if (!/^\d+$/.test(String(line))) {
+        throw new Error('[ERROR] 시도 횟수는 양의 정수여야 합니다.');
+    }
+    const n = Number(line);
+    if (!Number.isInteger(n) || n < 1) {
+        throw new Error('[ERROR] 시도 횟수는 1 이상의 정수여야 합니다.');
+    }
+    return n;
+}
